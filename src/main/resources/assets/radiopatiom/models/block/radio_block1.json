@@ -1,0 +1,25 @@
+{
+  "parent": "block/block",
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 10, 8],
+      "faces": {
+        "north": { "texture": "#front" },
+        "south": { "texture": "#back" },
+        "east":  { "texture": "#side" },
+        "west":  { "texture": "#side" },
+        "up":    { "texture": "#top" },
+        "down":  { "texture": "#bottom" }
+      }
+    }
+  ],
+  "textures": {
+    "front": "radiopatiom:block/radio_front",
+    "back": "radiopatiom:block/radio_back",
+    "side": "radiopatiom:block/radio_side",
+    "top": "radiopatiom:block/radio_top",
+    "bottom": "radiopatiom:block/radio_bottom",
+    "particle": "radiopatiom:block/radio_front"
+  }
+}

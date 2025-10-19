@@ -1,0 +1,10 @@
+{
+  "classic_cassette_sound": {
+    "sounds": [
+      {
+        "name": "radiopatiom:classic_cassette_sound",
+        "stream": true
+      }
+    ]
+  }
+}

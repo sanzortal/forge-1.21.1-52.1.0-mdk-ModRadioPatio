@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "radiopatiom:block/radio_block"
+    }
+  }
+}
