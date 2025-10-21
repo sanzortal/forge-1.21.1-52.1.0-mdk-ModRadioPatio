@@ -7,5 +7,6 @@
   "item.radiopatiom.redpink_cassette": "Casete rojo y rosa",
   "item.radiopatiom.musical_note": "Nota musical",
 
-  "block.radiopatiom.radio_block": "Radio Patio"
+  "block.radiopatiom.radio_block": "Radio Patio",
+  "container.radiopatiom.radio": "Radio"
 }

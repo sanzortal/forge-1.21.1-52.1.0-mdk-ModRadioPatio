@@ -1,7 +1,6 @@
 package com.zortas.radiopatiom.sound;
 
 import com.zortas.radiopatiom.RadioPatioM;
-import com.zortas.radiopatiom.block.custom.RadioBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

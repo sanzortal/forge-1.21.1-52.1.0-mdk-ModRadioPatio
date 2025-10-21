@@ -1,6 +1,7 @@
 package com.zortas.radiopatiom.block;
 
 import com.zortas.radiopatiom.RadioPatioM;
+import com.zortas.radiopatiom.block.custom.RadioBlock;
 import com.zortas.radiopatiom.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -18,11 +19,18 @@ public class ModBlock {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, RadioPatioM.MOD_ID);
 
     // REGISTRAR LOS BLOQUES
+
+    /* Antiguo Boque de la radio
     public static final RegistryObject<Block> RADIO_BLOCK = registerBlock("radio_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(1f, 2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+                    .strength(1f, 2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)) {
+            });*/
 
-
+    public static final RegistryObject<Block> RADIO_BLOCK = registerBlock("radio_block",
+            () -> new RadioBlock(BlockBehaviour.Properties.of()
+                    .strength(1f, 2f)
+                    .sound(SoundType.AMETHYST)
+                    .noOcclusion()));
 
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

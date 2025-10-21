@@ -1,7 +1,8 @@
 {
   "variants": {
-    "": {
-      "model": "radiopatiom:block/radio_block"
-    }
+    "facing=north": {"model": "radiopatiom:block/radio_block"},
+    "facing=east": {"model": "radiopatiom:block/radio_block", "y": 90},
+    "facing=south": {"model": "radiopatiom:block/radio_block", "y": 180},
+    "facing=west": {"model": "radiopatiom:block/radio_block", "y": 270}
   }
 }
