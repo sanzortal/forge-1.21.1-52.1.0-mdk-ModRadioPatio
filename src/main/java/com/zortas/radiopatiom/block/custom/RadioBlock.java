@@ -4,6 +4,8 @@ package com.zortas.radiopatiom.block.custom;
 import com.mojang.serialization.MapCodec;
 import com.zortas.radiopatiom.block.entity.custom.RadioBlockEntity;
 import com.zortas.radiopatiom.item.ModItems;
+import com.zortas.radiopatiom.sound.ModSounds;
+import com.zortas.radiopatiom.sound.RadioMusicHandler;
 import net.minecraft.core.BlockPos;
 
 import net.minecraft.sounds.SoundEvent;
@@ -107,8 +109,8 @@ public class RadioBlock extends BaseEntityBlock {
 
             Item item = pStack.getItem();
             boolean isAllowed = ALLOWED_ITEMS.stream().anyMatch(reg -> reg.get() == item);
-
                 if (pStack.isEmpty() && !radioBlockEntity.inventory.getStackInSlot(0).isEmpty()) {
+                    RadioMusicHandler.stop();
                     ItemStack stackOnRadio = radioBlockEntity.inventory.extractItem(0, 1, false);
                     pPlayer.setItemInHand(InteractionHand.MAIN_HAND, stackOnRadio);
                     radioBlockEntity.clearContents();
@@ -118,20 +120,13 @@ public class RadioBlock extends BaseEntityBlock {
                     if(radioBlockEntity.inventory.getStackInSlot(0).isEmpty() && !pStack.isEmpty()) {
                         radioBlockEntity.inventory.insertItem(0, pStack.copy(), false);
                         pStack.shrink(1);
-                        pLevel.playSound(pPlayer, pPos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1.0F, 1.0F);
+                        RadioMusicHandler.play(ModSounds.CLASSIC_CASSETTE_SOUND.get(), pPos);
                     } else {
                         pLevel.playSound(pPlayer, pPos, SoundEvents.VILLAGER_NO, SoundSource.BLOCKS, 1.0F, 1.0F);
                         return ItemInteractionResult.FAIL;
                     }
                 }
-
-
-
-
         }
-
-
-
         return ItemInteractionResult.SUCCESS;
     }
 }

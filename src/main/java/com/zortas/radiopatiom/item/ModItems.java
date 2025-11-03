@@ -14,7 +14,7 @@ public class ModItems {
 
     // 1. REGISTRAR LOS ITEMS TIPO CASETE
     public static final RegistryObject<Item> CLASSIC_CASSETTE = ITEMS.register("classic_cassette",
-            () -> new Item(new Item.Properties().jukeboxPlayable(ModSounds.CLASSIC_CASSETTE_SOUND_KEY).stacksTo(1)));
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SMILE_CASSETTE = ITEMS.register("smile_cassette",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SNOW_CASSETTE = ITEMS.register("snow_cassette",

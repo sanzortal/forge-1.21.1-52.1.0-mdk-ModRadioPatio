@@ -2,6 +2,7 @@ package com.zortas.radiopatiom.block.entity.custom;
 
 import com.zortas.radiopatiom.block.entity.ModBlockEntities;
 import com.zortas.radiopatiom.screen.custom.RadioMenu;
+import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -9,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.sounds.*;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -24,7 +26,7 @@ import org.jetbrains.annotations.Nullable;
 
 
 public class RadioBlockEntity extends BlockEntity implements MenuProvider {
-
+    private SoundInstance playingSound;
     public final ItemStackHandler inventory = new ItemStackHandler(1){
         @Override
         protected int getStackLimit(int slot, @NotNull ItemStack stack) {
@@ -42,8 +44,6 @@ public class RadioBlockEntity extends BlockEntity implements MenuProvider {
     public RadioBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.RADIO_BE.get(), pPos, pBlockState);
     }
-
-
 
     @Override
     public Component getDisplayName() {
