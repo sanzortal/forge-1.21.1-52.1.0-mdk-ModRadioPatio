@@ -134,4 +134,9 @@ public class RadioBlock extends BaseEntityBlock {
 
         return ItemInteractionResult.SUCCESS;
     }
+
+    @Override
+    protected RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
+    }
 }
