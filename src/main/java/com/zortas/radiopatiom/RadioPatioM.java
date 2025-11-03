@@ -2,9 +2,13 @@ package com.zortas.radiopatiom;
 
 import com.mojang.logging.LogUtils;
 import com.zortas.radiopatiom.block.ModBlock;
+import com.zortas.radiopatiom.block.entity.ModBlockEntities;
 import com.zortas.radiopatiom.item.ModItems;
+import com.zortas.radiopatiom.screen.ModMenuTypes;
+import com.zortas.radiopatiom.screen.custom.RadioScreen;
 import com.zortas.radiopatiom.sound.ModSounds;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -39,11 +43,16 @@ public class RadioPatioM {
         // 2. REGISTRAR A NUESTRA CARPETA / LISTA DE ITEMS
         ModItems.register(modEventBus);
 
-        // REGISTRAR NUESTRA CARPETA / LISTA DE BLOQUES
-        ModBlock.register(modEventBus);
+
 
         // REGISTRAR NUESTROS SONIDOS
         ModSounds.register(modEventBus);
+
+        //Registrar entityBlock
+        ModBlockEntities.register(modEventBus);
+        // REGISTRAR NUESTRA CARPETA / LISTA DE BLOQUES
+        ModBlock.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -102,6 +111,7 @@ public class RadioPatioM {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+            MenuScreens.register(ModMenuTypes.RADIO_MENU.get(), RadioScreen::new);
         }
     }
 }
