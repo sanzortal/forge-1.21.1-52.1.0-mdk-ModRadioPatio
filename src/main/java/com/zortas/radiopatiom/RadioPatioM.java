@@ -111,7 +111,7 @@ public class RadioPatioM {
             // Some client setup code
             LOGGER.info("HELLO FROM CLIENT SETUP");
             LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-            MenuScreens.register(ModMenuTypes.RADIO_MENU.get(), RadioScreen::new);
+
         }
     }
 }

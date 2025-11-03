@@ -3,7 +3,7 @@
     "sounds": [
       {
         "name": "radiopatiom:classic_cassette_sound",
-        "stream": true
+        "stream": false
       }
     ]
   }
